@@ -26,7 +26,7 @@ numbers.forEach((number) =>{
 
 numbers.forEach((number)=>{
     const absolute = number < 0 ? -number : number;
-    document.body.innerHTML += `<div>${number}</div>`;
+    document.body.innerHTML += `<div>${absolute}</div>`;
 });
 
 
@@ -41,34 +41,32 @@ numbers.forEach((number)=>{
 }
 });
 
-/*6*/
 
-numbers.forEach((number)=>{
-    if(number % 3 === 0){
-    document.body.innerHTML += `<div>${number}</div>`;
-}
-});
+/* opravená verze 6*/
 
-/*7, tu som sa bohužial úplne nedokázala vynájsť, ale funguje to :)*/ 
+numbers.forEach((num) => {
+    const absoluteThree = Math.abs(num);
 
-const five = numbers.indexOf(5);
-
-const distance = numbers.forEach((number, index)=>{
-    const result = index - five;
-    document.body.innerHTML += `<div>${number} se nachází ve vzdálenosti ${result} </div>`;
-
+    if(absoluteThree % 3 === 0){
+        document.body.innerHTML += `<div>${absoluteThree}je dělitelný 3</div>`;
+    }
+    
 })
 
 
+/* 7 opravená verze*/
 
-/*8*/
+numbers.forEach((num) => {
+    const difference = Math.abs(num-5);
+    document.body.innerHTML += `<div>Číslo ${num} je od čísla 5 vzdálené ${difference} čísel.</div>`;
+});
 
-const fiveExp = numbers.indexOf(5);
+/* 8 opravená verze*/
 
-const distanceExp = numbers.forEach((number, index)=>{
-    const result = index - fiveExp;
-    const resultExp = Math.pow(result, 2);
-    document.body.innerHTML += `<div>Druhá mocnina vzdálenosti je ${resultExp} </div>`;
+numbers.forEach((num) => {
+    const difference = Math.abs(num-5);
+    const differenceExp = Math.pow(difference, 2);
+    document.body.innerHTML += `<div>Druhá mocnina vzdálenosti je ${differenceExp} </div>`;
 });
 
 /*9* tady jsem musela podvádět. Tady úplně nechápu syntax, jakým způsobem se zapisuje arrow funkce, snažila jsem se to vpratat do {} :)*/
